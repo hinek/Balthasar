@@ -339,7 +339,6 @@ margin_top = 24.0
 margin_right = 128.0
 margin_bottom = 56.0
 custom_fonts/font = SubResource( 1 )
-text = "Am ... am I late?"
 align = 1
 __meta__ = {
 "_edit_use_anchors_": false

@@ -31,12 +31,12 @@ stretch_mode = 4
 [node name="CenterRow" type="HBoxContainer" parent="Menu"]
 margin_top = 36.0
 margin_right = 240.0
-margin_bottom = 140.0
+margin_bottom = 128.0
 size_flags_vertical = 3
 
 [node name="Buttons" type="VBoxContainer" parent="Menu/CenterRow"]
 margin_right = 240.0
-margin_bottom = 104.0
+margin_bottom = 92.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
@@ -62,11 +62,9 @@ margin_bottom = 92.0
 button_text = "Exit Game"
 
 [node name="Label" type="Label" parent="Menu"]
-anchor_top = -0.0490798
-anchor_bottom = -0.0490798
-margin_top = 144.0
+margin_top = 132.0
 margin_right = 240.0
-margin_bottom = 163.0
+margin_bottom = 151.0
 custom_fonts/font = ExtResource( 4 )
 custom_colors/font_color = Color( 0.498039, 0.498039, 0.498039, 1 )
 text = "version 1.0.10.9 by Hinek
