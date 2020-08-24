@@ -1,0 +1,94 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://Player.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Exit.tscn" type="PackedScene" id=2]
+[ext_resource path="res://ColorGem.tscn" type="PackedScene" id=3]
+[ext_resource path="res://tileset.tres" type="TileSet" id=4]
+[ext_resource path="res://Key.tscn" type="PackedScene" id=5]
+
+[node name="Level\?\?\?" type="Node2D"]
+
+[node name="Player" parent="." instance=ExtResource( 1 )]
+position = Vector2( -24, 0 )
+
+[node name="Exit" parent="." instance=ExtResource( 2 )]
+position = Vector2( 24, -8 )
+door_open = false
+
+[node name="Gems" type="Node2D" parent="."]
+
+[node name="RedGem" parent="Gems" instance=ExtResource( 3 )]
+modulate = Color( 1, 0, 0, 1 )
+position = Vector2( -24, 24 )
+
+[node name="GreenGem" parent="Gems" instance=ExtResource( 3 )]
+position = Vector2( 0, 24 )
+
+[node name="BlueGem" parent="Gems" instance=ExtResource( 3 )]
+modulate = Color( 0, 0, 1, 1 )
+position = Vector2( 24, 24 )
+
+[node name="Background" type="TileMap" parent="."]
+modulate = Color( 0.498039, 0.498039, 0.498039, 1 )
+z_index = -1
+tile_set = ExtResource( 4 )
+cell_size = Vector2( 16, 16 )
+collision_layer = 0
+collision_mask = 0
+format = 1
+__meta__ = {
+"_editor_description_": ""
+}
+
+[node name="Foreground" type="TileMap" parent="."]
+z_index = 1
+tile_set = ExtResource( 4 )
+cell_size = Vector2( 16, 16 )
+format = 1
+__meta__ = {
+"_editor_description_": ""
+}
+
+[node name="Red" type="TileMap" parent="Foreground"]
+modulate = Color( 0.8, 0, 0, 1 )
+z_index = 1
+tile_set = ExtResource( 4 )
+cell_size = Vector2( 16, 16 )
+cell_custom_transform = Transform2D( 16, 0, 0, 16, 0, 0 )
+collision_layer = 2
+collision_mask = 2
+format = 1
+__meta__ = {
+"_editor_description_": ""
+}
+
+[node name="Green" type="TileMap" parent="Foreground"]
+modulate = Color( 0, 0.8, 0, 1 )
+z_index = 1
+tile_set = ExtResource( 4 )
+cell_size = Vector2( 16, 16 )
+cell_custom_transform = Transform2D( 16, 0, 0, 16, 0, 0 )
+collision_layer = 4
+collision_mask = 4
+format = 1
+__meta__ = {
+"_editor_description_": ""
+}
+
+[node name="Blue" type="TileMap" parent="Foreground"]
+modulate = Color( 0, 0, 0.8, 1 )
+z_index = 1
+tile_set = ExtResource( 4 )
+cell_size = Vector2( 16, 16 )
+cell_custom_transform = Transform2D( 16, 0, 0, 16, 0, 0 )
+collision_layer = 8
+collision_mask = 8
+format = 1
+__meta__ = {
+"_editor_description_": ""
+}
+
+[node name="Keys" type="Node2D" parent="."]
+
+[node name="Key" parent="Keys" instance=ExtResource( 5 )]
+position = Vector2( 0, -8 )

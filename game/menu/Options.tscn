@@ -1,0 +1,111 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://menu/MenuButton.tscn" type="PackedScene" id=1]
+[ext_resource path="res://images/title32.png" type="Texture" id=2]
+[ext_resource path="res://images/tileset.png" type="Texture" id=3]
+[ext_resource path="res://menu/Options.gd" type="Script" id=4]
+[ext_resource path="res://fonts/menu-font.tres" type="DynamicFont" id=5]
+
+[node name="Options" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Menu" type="VBoxContainer" parent="."]
+margin_left = 40.0
+margin_top = 20.0
+margin_right = 280.0
+margin_bottom = 160.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Logo" type="TextureRect" parent="Menu"]
+margin_right = 240.0
+margin_bottom = 32.0
+texture = ExtResource( 2 )
+stretch_mode = 4
+__meta__ = {
+"_editor_description_": ""
+}
+
+[node name="CenterRow" type="HBoxContainer" parent="Menu"]
+margin_top = 36.0
+margin_right = 240.0
+margin_bottom = 154.0
+size_flags_vertical = 3
+
+[node name="Buttons" type="VBoxContainer" parent="Menu/CenterRow"]
+margin_right = 118.0
+margin_bottom = 118.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="ToggleMusic" parent="Menu/CenterRow/Buttons" instance=ExtResource( 1 )]
+margin_right = 118.0
+button_text = "Music"
+
+[node name="Icon" type="Sprite" parent="Menu/CenterRow/Buttons/ToggleMusic"]
+position = Vector2( 110, 10 )
+texture = ExtResource( 3 )
+vframes = 22
+hframes = 48
+frame = 806
+__meta__ = {
+"_editor_description_": ""
+}
+
+[node name="ToggleSfx" parent="Menu/CenterRow/Buttons" instance=ExtResource( 1 )]
+margin_top = 24.0
+margin_right = 118.0
+margin_bottom = 44.0
+button_text = "Sounds"
+
+[node name="Icon" type="Sprite" parent="Menu/CenterRow/Buttons/ToggleSfx"]
+position = Vector2( 110, 10 )
+texture = ExtResource( 3 )
+vframes = 22
+hframes = 48
+frame = 806
+__meta__ = {
+"_editor_description_": ""
+}
+
+[node name="Back" parent="Menu/CenterRow/Buttons" instance=ExtResource( 1 )]
+margin_top = 48.0
+margin_right = 118.0
+margin_bottom = 68.0
+button_text = "Back"
+scene_to_load = "res://menu/TitleScreen.tscn"
+
+[node name="Controls" type="VBoxContainer" parent="Menu/CenterRow"]
+margin_left = 122.0
+margin_right = 240.0
+margin_bottom = 118.0
+size_flags_horizontal = 3
+
+[node name="Label" type="Label" parent="Menu/CenterRow/Controls"]
+margin_right = 118.0
+margin_bottom = 118.0
+custom_fonts/font = ExtResource( 5 )
+text = " Instructions
+
+ Left   ← or A
+ Right  → or D
+ Jump   ↑ or W
+ Run    CTRL
+ Lever  Space
+
+ Back to Title
+        ESC
+"
+valign = 1
+uppercase = true
+__meta__ = {
+"_editor_description_": ""
+}
+[connection signal="pressed" from="Menu/CenterRow/Buttons/ToggleMusic" to="." method="_on_ToggleMusic_pressed"]
+[connection signal="pressed" from="Menu/CenterRow/Buttons/ToggleSfx" to="." method="_on_ToggleSfx_pressed"]

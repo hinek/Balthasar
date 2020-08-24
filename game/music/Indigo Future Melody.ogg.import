@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/Indigo Future Melody.ogg-99a2a081c33c14a74f60ebe823a9fb36.oggstr"
+
+[deps]
+
+source_file="res://music/Indigo Future Melody.ogg"
+dest_files=[ "res://.import/Indigo Future Melody.ogg-99a2a081c33c14a74f60ebe823a9fb36.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

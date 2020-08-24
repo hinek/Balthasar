@@ -1,0 +1,218 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://menu/MenuButton.tscn" type="PackedScene" id=1]
+[ext_resource path="res://menu/LevelSelect.gd" type="Script" id=2]
+[ext_resource path="res://images/title32.png" type="Texture" id=3]
+[ext_resource path="res://fonts/menu-font.tres" type="DynamicFont" id=4]
+
+[sub_resource type="StyleBoxFlat" id=1]
+bg_color = Color( 0, 0, 0, 0 )
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color( 1, 1, 1, 1 )
+expand_margin_left = 5.0
+expand_margin_right = 5.0
+
+[node name="LevelSelect" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Menu" type="VBoxContainer" parent="."]
+margin_left = 40.0
+margin_top = 20.0
+margin_right = 280.0
+margin_bottom = 160.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureRect" type="TextureRect" parent="Menu"]
+margin_right = 240.0
+margin_bottom = 32.0
+texture = ExtResource( 3 )
+stretch_mode = 4
+__meta__ = {
+"_editor_description_": ""
+}
+
+[node name="CenterRow" type="HBoxContainer" parent="Menu"]
+margin_top = 36.0
+margin_right = 240.0
+margin_bottom = 140.0
+size_flags_vertical = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Menu/CenterRow"]
+margin_right = 118.0
+margin_bottom = 104.0
+
+[node name="ButtonGrid" type="GridContainer" parent="Menu/CenterRow/VBoxContainer"]
+margin_right = 118.0
+margin_bottom = 42.0
+custom_constants/vseparation = 0
+custom_constants/hseparation = 10
+columns = 4
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Lvl01" type="Button" parent="Menu/CenterRow/VBoxContainer/ButtonGrid"]
+margin_right = 20.0
+margin_bottom = 14.0
+focus_neighbour_right = NodePath("../Lvl02")
+focus_neighbour_bottom = NodePath("../Lvl05")
+custom_styles/focus = SubResource( 1 )
+custom_fonts/font = ExtResource( 4 )
+text = "1"
+flat = true
+__meta__ = {
+"_editor_description_": ""
+}
+
+[node name="Lvl02" type="Button" parent="Menu/CenterRow/VBoxContainer/ButtonGrid"]
+margin_left = 30.0
+margin_right = 58.0
+margin_bottom = 14.0
+focus_neighbour_left = NodePath("../Lvl01")
+focus_neighbour_right = NodePath("../Lvl03")
+focus_neighbour_bottom = NodePath("../Lvl06")
+custom_styles/focus = SubResource( 1 )
+custom_fonts/font = ExtResource( 4 )
+text = "2"
+flat = true
+__meta__ = {
+"_editor_description_": ""
+}
+
+[node name="Lvl03" type="Button" parent="Menu/CenterRow/VBoxContainer/ButtonGrid"]
+margin_left = 68.0
+margin_right = 88.0
+margin_bottom = 14.0
+focus_neighbour_left = NodePath("../Lvl02")
+focus_neighbour_right = NodePath("../Lvl04")
+focus_neighbour_bottom = NodePath("../Lvl07")
+custom_styles/focus = SubResource( 1 )
+custom_fonts/font = ExtResource( 4 )
+text = "3"
+flat = true
+__meta__ = {
+"_editor_description_": ""
+}
+
+[node name="Lvl04" type="Button" parent="Menu/CenterRow/VBoxContainer/ButtonGrid"]
+margin_left = 98.0
+margin_right = 118.0
+margin_bottom = 14.0
+focus_neighbour_left = NodePath("../Lvl03")
+focus_neighbour_bottom = NodePath("../Lvl08")
+custom_styles/focus = SubResource( 1 )
+custom_fonts/font = ExtResource( 4 )
+text = "4"
+flat = true
+__meta__ = {
+"_editor_description_": ""
+}
+
+[node name="Lvl05" type="Button" parent="Menu/CenterRow/VBoxContainer/ButtonGrid"]
+margin_top = 14.0
+margin_right = 20.0
+margin_bottom = 28.0
+focus_neighbour_top = NodePath("../Lvl01")
+focus_neighbour_right = NodePath("../Lvl06")
+focus_neighbour_bottom = NodePath("../Lvl09")
+custom_styles/focus = SubResource( 1 )
+custom_fonts/font = ExtResource( 4 )
+text = "5"
+flat = true
+__meta__ = {
+"_editor_description_": ""
+}
+
+[node name="Lvl06" type="Button" parent="Menu/CenterRow/VBoxContainer/ButtonGrid"]
+margin_left = 30.0
+margin_top = 14.0
+margin_right = 58.0
+margin_bottom = 28.0
+focus_neighbour_left = NodePath("../Lvl05")
+focus_neighbour_top = NodePath("../Lvl02")
+focus_neighbour_right = NodePath("../Lvl07")
+focus_neighbour_bottom = NodePath("../Lvl10")
+custom_styles/focus = SubResource( 1 )
+custom_fonts/font = ExtResource( 4 )
+text = "6"
+flat = true
+__meta__ = {
+"_editor_description_": ""
+}
+
+[node name="Lvl07" type="Button" parent="Menu/CenterRow/VBoxContainer/ButtonGrid"]
+margin_left = 68.0
+margin_top = 14.0
+margin_right = 88.0
+margin_bottom = 28.0
+focus_neighbour_left = NodePath("../Lvl06")
+focus_neighbour_top = NodePath("../Lvl03")
+focus_neighbour_right = NodePath("../Lvl08")
+custom_styles/focus = SubResource( 1 )
+custom_fonts/font = ExtResource( 4 )
+text = "7"
+flat = true
+__meta__ = {
+"_editor_description_": ""
+}
+
+[node name="Lvl08" type="Button" parent="Menu/CenterRow/VBoxContainer/ButtonGrid"]
+margin_left = 98.0
+margin_top = 14.0
+margin_right = 118.0
+margin_bottom = 28.0
+focus_neighbour_left = NodePath("../Lvl07")
+focus_neighbour_top = NodePath("../Lvl04")
+custom_styles/focus = SubResource( 1 )
+custom_fonts/font = ExtResource( 4 )
+text = "8"
+flat = true
+__meta__ = {
+"_editor_description_": ""
+}
+
+[node name="Lvl09" type="Button" parent="Menu/CenterRow/VBoxContainer/ButtonGrid"]
+margin_top = 28.0
+margin_right = 20.0
+margin_bottom = 42.0
+focus_neighbour_top = NodePath("../Lvl05")
+focus_neighbour_right = NodePath("../Lvl10")
+custom_styles/focus = SubResource( 1 )
+custom_fonts/font = ExtResource( 4 )
+text = "9"
+flat = true
+__meta__ = {
+"_editor_description_": ""
+}
+
+[node name="Lvl10" type="Button" parent="Menu/CenterRow/VBoxContainer/ButtonGrid"]
+margin_left = 30.0
+margin_top = 28.0
+margin_right = 58.0
+margin_bottom = 42.0
+focus_neighbour_left = NodePath("../Lvl09")
+focus_neighbour_top = NodePath("../Lvl06")
+custom_styles/focus = SubResource( 1 )
+custom_fonts/font = ExtResource( 4 )
+text = "10"
+flat = true
+__meta__ = {
+"_editor_description_": ""
+}
+
+[node name="Back" parent="Menu/CenterRow/VBoxContainer" instance=ExtResource( 1 )]
+margin_top = 46.0
+margin_right = 118.0
+margin_bottom = 66.0
+button_text = "Back"
+scene_to_load = "res://menu/TitleScreen.tscn"

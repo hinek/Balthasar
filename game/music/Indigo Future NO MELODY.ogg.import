@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/Indigo Future NO MELODY.ogg-b2a6c3e3679f250126bd4ee6c1d1eb72.oggstr"
+
+[deps]
+
+source_file="res://music/Indigo Future NO MELODY.ogg"
+dest_files=[ "res://.import/Indigo Future NO MELODY.ogg-b2a6c3e3679f250126bd4ee6c1d1eb72.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

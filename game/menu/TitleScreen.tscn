@@ -1,0 +1,79 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://menu/MenuButton.tscn" type="PackedScene" id=1]
+[ext_resource path="res://images/title32.png" type="Texture" id=2]
+[ext_resource path="res://menu/TitleScreen.gd" type="Script" id=3]
+[ext_resource path="res://fonts/menu-font.tres" type="DynamicFont" id=4]
+
+[node name="TitleScreen" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Menu" type="VBoxContainer" parent="."]
+margin_left = 40.0
+margin_top = 20.0
+margin_right = 280.0
+margin_bottom = 160.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Logo" type="TextureRect" parent="Menu"]
+margin_right = 240.0
+margin_bottom = 32.0
+texture = ExtResource( 2 )
+stretch_mode = 4
+
+[node name="CenterRow" type="HBoxContainer" parent="Menu"]
+margin_top = 36.0
+margin_right = 240.0
+margin_bottom = 140.0
+size_flags_vertical = 3
+
+[node name="Buttons" type="VBoxContainer" parent="Menu/CenterRow"]
+margin_right = 240.0
+margin_bottom = 104.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="NewGame" parent="Menu/CenterRow/Buttons" instance=ExtResource( 1 )]
+button_text = "New Game"
+scene_to_load = "res://levels/Intro.tscn"
+
+[node name="SelectLevel" parent="Menu/CenterRow/Buttons" instance=ExtResource( 1 )]
+margin_top = 24.0
+margin_bottom = 44.0
+button_text = "Select Level"
+scene_to_load = "res://menu/LevelSelect.tscn"
+
+[node name="Options" parent="Menu/CenterRow/Buttons" instance=ExtResource( 1 )]
+margin_top = 48.0
+margin_bottom = 68.0
+button_text = "Options"
+scene_to_load = "res://menu/Options.tscn"
+
+[node name="Exit" parent="Menu/CenterRow/Buttons" instance=ExtResource( 1 )]
+margin_top = 72.0
+margin_bottom = 92.0
+button_text = "Exit Game"
+
+[node name="Label" type="Label" parent="Menu"]
+anchor_top = -0.0490798
+anchor_bottom = -0.0490798
+margin_top = 144.0
+margin_right = 240.0
+margin_bottom = 163.0
+custom_fonts/font = ExtResource( 4 )
+custom_colors/font_color = Color( 0.498039, 0.498039, 0.498039, 1 )
+text = "version 1.0.10.9 by Hinek
+https://derHinek.itch.io/"
+align = 1
+valign = 1
+__meta__ = {
+"_editor_description_": ""
+}
+[connection signal="pressed" from="Menu/CenterRow/Buttons/Exit" to="." method="_on_Exit_pressed"]
