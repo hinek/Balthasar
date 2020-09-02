@@ -1,0 +1,95 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://menu/MenuButton.tscn" type="PackedScene" id=1]
+[ext_resource path="res://images/title32.png" type="Texture" id=2]
+[ext_resource path="res://menu/Controls.gd" type="Script" id=3]
+[ext_resource path="res://fonts/menu-font.tres" type="DynamicFont" id=5]
+
+[node name="Controls" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Menu" type="VBoxContainer" parent="."]
+margin_left = 40.0
+margin_top = 20.0
+margin_right = 280.0
+margin_bottom = 160.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Logo" type="TextureRect" parent="Menu"]
+margin_right = 240.0
+margin_bottom = 32.0
+texture = ExtResource( 2 )
+stretch_mode = 4
+__meta__ = {
+"_editor_description_": ""
+}
+
+[node name="CenterRow" type="HBoxContainer" parent="Menu"]
+margin_top = 36.0
+margin_right = 240.0
+margin_bottom = 145.0
+size_flags_vertical = 3
+
+[node name="Keyboard" type="VBoxContainer" parent="Menu/CenterRow"]
+margin_right = 116.0
+margin_bottom = 109.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Label" type="Label" parent="Menu/CenterRow/Keyboard"]
+margin_right = 116.0
+margin_bottom = 107.0
+custom_fonts/font = ExtResource( 5 )
+text = "Keyboard
+
+Left   ← or A
+Right  → or D
+Jump   ↑ or W
+Run    Shift
+Lever  Space
+Reset  R
+Exit   ESC
+"
+valign = 1
+uppercase = true
+__meta__ = {
+"_editor_description_": ""
+}
+
+[node name="Controller" type="VBoxContainer" parent="Menu/CenterRow"]
+margin_left = 120.0
+margin_right = 240.0
+margin_bottom = 109.0
+size_flags_horizontal = 3
+
+[node name="Label" type="Label" parent="Menu/CenterRow/Controller"]
+margin_right = 120.0
+margin_bottom = 85.0
+custom_fonts/font = ExtResource( 5 )
+text = "GAMEPAD
+
+Move   D-Pad
+       or Stick
+Jump   A (Xbox)
+Run    R1
+Lever  X (Xbox)
+Reset  L1"
+valign = 1
+uppercase = true
+__meta__ = {
+"_editor_description_": ""
+}
+
+[node name="Back" parent="Menu/CenterRow/Controller" instance=ExtResource( 1 )]
+margin_top = 89.0
+margin_right = 120.0
+margin_bottom = 109.0
+button_text = "Back"
+scene_to_load = "res://menu/Options.tscn"
